@@ -2,5 +2,6 @@ export interface phrases {
   portuguesePhrase: string;
   englishPhrase: string;
   verbalTime: string;
-  id?: number
+  phraseAnswed?: string;
+  id?: number;
 }

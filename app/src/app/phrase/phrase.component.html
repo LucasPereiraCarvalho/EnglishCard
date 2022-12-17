@@ -1,4 +1,35 @@
-<mat-card>
-  <mat-card-content>{{ phraseShow[0].portuguesePhrase }}</mat-card-content>
-</mat-card>
-<button mat-raised-button (click)="showOnlyOnePhraseInPortuguse()">Basic</button>
+<form class="c-form__Answer">
+  <mat-card>
+    <mat-card-content>{{ phraseShow.portuguesePhrase }}</mat-card-content>
+  </mat-card>
+
+  <mat-form-field>
+    <mat-label>Answer</mat-label>
+    <input matInput #answer [formControl]="formAnswerControl" required />
+    <mat-error *ngIf="formAnswerControl.hasError('required')">
+      Answer is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="c-form__Buttons">
+    <button
+      mat-raised-button
+      (click)="saveAnswed(phraseShow, answer.value)"
+      [disabled]="!formAnswerControl.valid"
+    >
+      Next Phrase
+    </button>
+
+    <button
+      mat-raised-button
+      (click)="saveAnswed(phraseShow, '')"
+      [disabled]="formAnswerControl.valid"
+    >
+      Skip Phrase
+    </button>
+
+    <button mat-raised-button (click)="navigateToListPhrasesAnswed()">
+      List Phrases Answed
+    </button>
+  </div>
+</form>

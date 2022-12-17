@@ -1,5 +1,6 @@
-import { NgIfContext } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { phrases } from '../models/phrase.model';
 import { PhraseService } from '../services/phrase.service';
 
@@ -9,17 +10,24 @@ import { PhraseService } from '../services/phrase.service';
   styleUrls: ['./phrase.component.scss'],
 })
 export class PhraseComponent implements OnInit {
-  phrasesAnswer: phrases[] = [];
   phrases: phrases[] = [];
-  phraseShow: phrases[] = [];
+  phrasesAnswed: phrases[] = [];
+  phraseShow: phrases = {
+    portuguesePhrase: '',
+    englishPhrase: '',
+    verbalTime: '',
+    phraseAnswed: '',
+  };
 
-  constructor(private phraseService: PhraseService) {}
+  formAnswerControl = new FormControl('', [Validators.required]);
+
+  constructor(private phraseService: PhraseService, private router: Router) {}
 
   ngOnInit(): void {
     this.phraseService.getPhrases().subscribe((phrases: phrases[]) => {
       this.phrases = this.addIdInObject(phrases);
     });
-    this.showOnlyOnePhraseInPortuguse();
+    this.showNextPhraseInPortuguse();
   }
 
   addIdInObject(phrases: phrases[]): phrases[] {
@@ -31,18 +39,30 @@ export class PhraseComponent implements OnInit {
     });
   }
 
-  showOnlyOnePhraseInPortuguse() {
+  saveAnswed(phrase: phrases, phraseAnswed: string) {
+    const answer = {
+      ...phrase,
+      phraseAnswed: phraseAnswed,
+    };
+
+    this.phrasesAnswed.push(answer);
+    this.showNextPhraseInPortuguse();
+  }
+
+  showNextPhraseInPortuguse() {
     for (const phrase of this.phrases) {
-      if (this.phrasesAnswer.includes(phrase)) return;
-      else {
-        console.log('add');
-        this.phrasesAnswer.push(phrase);
-        this.phraseShow[0] = phrase;
+      const phraseNotAnswed = !this.phrasesAnswed.find(
+        (p) => p.id === phrase.id
+      );
+      if (phraseNotAnswed) {
+        this.phraseShow = phrase;
+        this.formAnswerControl.reset();
         break;
       }
     }
+  }
 
-    console.log(this.phrasesAnswer);
-    return this.phraseShow;
+  navigateToListPhrasesAnswed() {
+    this.router.navigate(['/list-phrases-answed'])
   }
 }
