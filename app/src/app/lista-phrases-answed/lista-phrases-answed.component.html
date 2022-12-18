@@ -1,0 +1,33 @@
+<div class="c-list-phrases-answed__back__phrase">
+  <button mat-raised-button (click)="backPagePhrase()">Back Phrase</button>
+</div>
+
+<div class="c-list-phrases-answed" *ngFor="let phrase of phrasesAnswed">
+  <mat-card class="c-list-phrases-answed__id">
+    <mat-card-content> {{ phrase.id }} </mat-card-content>
+  </mat-card>
+  <div class="c-list-phrases-answed__data">
+    <mat-card class="c-list-phrases-answed__cards">
+      <mat-card-content> {{ phrase.portuguesePhrase }} </mat-card-content>
+    </mat-card>
+    <mat-card class="c-list-phrases-answed__cards">
+      <mat-card-content> {{ phrase.englishPhrase }} </mat-card-content>
+    </mat-card>
+    <mat-card class="c-list-phrases-answed__cards">
+      <mat-card-content class="c-list-phrases-answed__card__phrase__answed">
+        R: {{ phrase.phraseAnswed }}
+        <!-- <div>
+          <button mat-raised-button color="primary" (click)="answerCorrect()">
+            Correct
+          </button>
+          <button mat-raised-button color="warn" (click)="answerWrong()">
+            Wrong
+          </button>
+        </div> -->
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="c-list-phrases-answed__cards">
+      <mat-card-content> {{ phrase.verbalTime }} </mat-card-content>
+    </mat-card>
+  </div>
+</div>

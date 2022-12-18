@@ -28,7 +28,11 @@
       Skip Phrase
     </button>
 
-    <button mat-raised-button (click)="navigateToListPhrasesAnswed()">
+    <button
+      mat-raised-button
+      (click)="navigateToListPhrasesAnswed()"
+      [disabled]="phrasesAnswed.length === 0"
+    >
       List Phrases Answed
     </button>
   </div>

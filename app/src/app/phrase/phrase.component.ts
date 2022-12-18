@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { phrases } from '../models/phrase.model';
 import { PhraseService } from '../services/phrase.service';
@@ -21,7 +22,7 @@ export class PhraseComponent implements OnInit {
 
   formAnswerControl = new FormControl('', [Validators.required]);
 
-  constructor(private phraseService: PhraseService, private router: Router) {}
+  constructor(private phraseService: PhraseService, private router: Router,private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.phraseService.getPhrases().subscribe((phrases: phrases[]) => {
@@ -46,6 +47,9 @@ export class PhraseComponent implements OnInit {
     };
 
     this.phrasesAnswed.push(answer);
+    const message = phraseAnswed === '' ? 'Phrase skiped' : 'Phrase saved'
+    this._snackBar.open(message);
+
     this.showNextPhraseInPortuguse();
   }
 
@@ -63,6 +67,6 @@ export class PhraseComponent implements OnInit {
   }
 
   navigateToListPhrasesAnswed() {
-    this.router.navigate(['/list-phrases-answed'])
+    this.router.navigate(['/list-phrases-answed'], { state: this.phrasesAnswed });
   }
 }
