@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 import { phrases } from '../models/phrase.model';
 import { PhraseService } from '../services/phrase.service';
 
@@ -22,13 +23,25 @@ export class PhraseComponent implements OnInit {
 
   formAnswerControl = new FormControl('', [Validators.required]);
 
-  constructor(private phraseService: PhraseService, private router: Router,private _snackBar: MatSnackBar) {}
+  constructor(
+    private phraseService: PhraseService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
-    this.phraseService.getPhrases().subscribe((phrases: phrases[]) => {
-      this.phrases = this.addIdInObject(phrases);
-    });
+    this.phraseService
+      .getPhrases()
+      .pipe(take(1))
+      .subscribe((phrases: phrases[]) => {
+        this.phrases = this.addIdInObject(phrases);
+        this.shuffle(this.phrases);
+      });
     this.showNextPhraseInPortuguse();
+  }
+
+  shuffle(array: phrases[]) {
+    array.sort(() => Math.random() - 0.5);
   }
 
   addIdInObject(phrases: phrases[]): phrases[] {
@@ -47,7 +60,7 @@ export class PhraseComponent implements OnInit {
     };
 
     this.phrasesAnswed.push(answer);
-    const message = phraseAnswed === '' ? 'Phrase skiped' : 'Phrase saved'
+    const message = phraseAnswed === '' ? 'Phrase skiped' : 'Phrase saved';
     this._snackBar.open(message);
 
     this.showNextPhraseInPortuguse();
@@ -67,6 +80,8 @@ export class PhraseComponent implements OnInit {
   }
 
   navigateToListPhrasesAnswed() {
-    this.router.navigate(['/list-phrases-answed'], { state: this.phrasesAnswed });
+    this.router.navigate(['/list-phrases-answed'], {
+      state: this.phrasesAnswed,
+    });
   }
 }
