@@ -12,10 +12,30 @@ export class ListaPhrasesAnswedComponent {
 
   constructor(private router: Router) {
     this.phrasesAnswed = this.router.getCurrentNavigation()?.extras.state;
-    console.log(this.phrasesAnswed)
   }
 
   backPagePhrase() {
     this.router.navigate(['/']);
+  }
+
+  answerCorrect(id: number, correct: boolean) {
+    this.phrasesAnswed = this.phrasesAnswed.map((phrase: phrases) => {
+      return phrase.id === id
+        ? {
+            ...phrase,
+            phraseCorrect: correct,
+          }
+        : { ...phrase };
+    });
+  }
+
+  score(): string {
+    if (!this.phrasesAnswed) return '0 / 0';
+
+    const phrasesCorrect = this.phrasesAnswed.filter(
+      (p: phrases) => p.phraseCorrect === true
+    );
+
+    return `${phrasesCorrect.length} / ${this.phrasesAnswed.length}`;
   }
 }
