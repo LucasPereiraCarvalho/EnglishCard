@@ -1,4 +1,5 @@
 <div class="c-list-phrases-answed__back__phrase">
+  <div>{{ score() }}</div>
   <button mat-raised-button (click)="backPagePhrase()">Back Phrase</button>
 </div>
 
@@ -16,14 +17,44 @@
     <mat-card class="c-list-phrases-answed__cards">
       <mat-card-content class="c-list-phrases-answed__card__phrase__answed">
         R: {{ phrase.phraseAnswed }}
-        <!-- <div>
-          <button mat-raised-button color="primary" (click)="answerCorrect()">
+        <div>
+          <button
+            *ngIf="
+              phrase.phraseCorrect === false ||
+              phrase.phraseCorrect === undefined
+            "
+            mat-raised-button
+            (click)="answerCorrect(phrase.id, true)"
+          >
             Correct
           </button>
-          <button mat-raised-button color="warn" (click)="answerWrong()">
+          <button
+            *ngIf="phrase.phraseCorrect === true"
+            mat-raised-button
+            color="primary"
+            (click)="answerCorrect(phrase.id, true)"
+          >
+            Correct
+          </button>
+          <button
+            *ngIf="
+              phrase.phraseCorrect === true ||
+              phrase.phraseCorrect === undefined
+            "
+            mat-raised-button
+            (click)="answerCorrect(phrase.id, false)"
+          >
             Wrong
           </button>
-        </div> -->
+          <button
+            *ngIf="phrase.phraseCorrect === false"
+            mat-raised-button
+            color="warn"
+            (click)="answerCorrect(phrase.id, false)"
+          >
+            Wrong
+          </button>
+        </div>
       </mat-card-content>
     </mat-card>
     <mat-card class="c-list-phrases-answed__cards">
