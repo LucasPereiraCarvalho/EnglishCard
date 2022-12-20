@@ -15,6 +15,7 @@ export class PhraseComponent implements OnInit {
   phrases: phrases[] = [];
   phrasesAnswed: phrases[] = [];
   phraseShow: phrases = {
+    id: 0,
     portuguesePhrase: '',
     englishPhrase: '',
     verbalTime: '',
@@ -40,10 +41,6 @@ export class PhraseComponent implements OnInit {
     this.showNextPhraseInPortuguse();
   }
 
-  shuffle(array: phrases[]) {
-    array.sort(() => Math.random() - 0.5);
-  }
-
   addIdInObject(phrases: phrases[]): phrases[] {
     return phrases.map((phrase, index) => {
       return {
@@ -51,6 +48,10 @@ export class PhraseComponent implements OnInit {
         id: index + 1,
       };
     });
+  }
+
+  shuffle(array: phrases[]) {
+    array.sort(() => Math.random() - 0.5);
   }
 
   saveAnswed(phrase: phrases, phraseAnswed: string) {
@@ -67,7 +68,10 @@ export class PhraseComponent implements OnInit {
   }
 
   showNextPhraseInPortuguse() {
-    for (const phrase of this.phrases) {
+    const phrasesDontAnswed = this.phrases.filter(
+      (p) => p.phraseAnswed === undefined
+    );
+    for (const phrase of phrasesDontAnswed) {
       const phraseNotAnswed = !this.phrasesAnswed.find(
         (p) => p.id === phrase.id
       );
