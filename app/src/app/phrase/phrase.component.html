@@ -12,28 +12,27 @@
   </mat-form-field>
 
   <div class="c-form__Buttons">
-    <button
-      mat-raised-button
-      (click)="saveAnswed(phraseShow, answer.value)"
-      [disabled]="!formAnswerControl.valid"
-    >
-      Next Phrase
-    </button>
+    <label>{{ phrasesAnswed.length }} / {{ phrases.length }}</label>
+    <div class="c-form__Buttons">
+      <button
+        mat-raised-button
+        (click)="saveAnswed(phraseShow, answer.value)"
+        [disabled]="!formAnswerControl.valid"
+      >
+        Next Phrase
+      </button>
 
-    <button
-      mat-raised-button
-      (click)="saveAnswed(phraseShow, 'N/A')"
-      [disabled]="formAnswerControl.valid"
-    >
-      Skip Phrase
-    </button>
+      <button
+        mat-raised-button
+        (click)="saveAnswed(phraseShow, 'N/A')"
+        [disabled]="formAnswerControl.valid"
+      >
+        Skip Phrase
+      </button>
 
-    <button
-      mat-raised-button
-      (click)="navigateToListPhrasesAnswed()"
-      [disabled]="phrasesAnswed.length === 0"
-    >
-      List Phrases Answed
-    </button>
+      <button mat-raised-button (click)="navigateToListPhrasesAnswed()">
+        List Phrases Answed
+      </button>
+    </div>
   </div>
 </form>

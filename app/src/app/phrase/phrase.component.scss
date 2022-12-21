@@ -8,6 +8,7 @@ mat-card {
 
 .c-form__Buttons {
   display: flex;
+  align-items: center;
   gap: 16px;
-  justify-content: end;
+  justify-content: space-between;
 }

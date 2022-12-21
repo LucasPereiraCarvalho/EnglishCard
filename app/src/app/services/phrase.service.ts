@@ -23,7 +23,7 @@ export class PhraseService {
       verbalTime: 'PC',
     },
     {
-      portuguesePhrase: 'Ninguém o conhece',
+      portuguesePhrase: 'Ninguém conhece ele',
       englishPhrase: 'No One knows him',
       verbalTime: 'SP',
     },
