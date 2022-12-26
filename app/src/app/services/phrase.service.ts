@@ -111,6 +111,15 @@ export class PhraseService {
   ];
 
   getPhrases(): Observable<phrases[]> {
-    return of(this.phrases).pipe(map((response: phrases[]) => response));
+    return of(this.phrases).pipe(
+      map((response: any) =>
+        response.map((phrase: phrases, index: number) => {
+          return {
+            ...phrase,
+            id: index + 1,
+          };
+        })
+      )
+    );
   }
 }

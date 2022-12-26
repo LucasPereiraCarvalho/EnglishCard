@@ -34,24 +34,12 @@ export class PhraseComponent implements OnInit {
     this.phraseService
       .getPhrases()
       .pipe(take(1))
-      .subscribe((phrases: phrases[]) => {
-        this.phrases = this.addIdInObject(phrases);
-        this.shuffle(this.phrases);
-      });
+      .subscribe(
+        (phrases: phrases[]) =>
+          (this.phrases = phrases.sort(() => Math.random() - 0.5))
+      );
+
     this.showNextPhraseInPortuguse();
-  }
-
-  addIdInObject(phrases: phrases[]): phrases[] {
-    return phrases.map((phrase, index) => {
-      return {
-        ...phrase,
-        id: index + 1,
-      };
-    });
-  }
-
-  shuffle(array: phrases[]) {
-    array.sort(() => Math.random() - 0.5);
   }
 
   saveAnswed(phrase: phrases, phraseAnswed: string) {
