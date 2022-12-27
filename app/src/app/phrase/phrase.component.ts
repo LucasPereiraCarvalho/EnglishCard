@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
 import { phrases } from '../models/phrase.model';
+import {
+  VerbalTimesFuture,
+  VerbalTimesPast,
+  VerbalTimesPresent,
+} from '../models/verbalTime';
 import { PhraseService } from '../services/phrase.service';
 
 @Component({
@@ -14,15 +19,17 @@ import { PhraseService } from '../services/phrase.service';
 export class PhraseComponent implements OnInit {
   phrases: phrases[] = [];
   phrasesAnswed: phrases[] = [];
-  phraseShow: phrases = {
-    id: 0,
-    portuguesePhrase: '',
-    englishPhrase: '',
-    verbalTime: '',
-    phraseAnswed: '',
-  };
+  phraseShow: phrases;
+  verbalTimeSelected: string;
 
-  formAnswerControl = new FormControl('', [Validators.required]);
+  optionsVerbalTimesFuture: string[] = VerbalTimesFuture;
+  optionsVerbalTimesPresent: string[] = VerbalTimesPresent;
+  optionsVerbalTimesPast: string[] = VerbalTimesPast;
+
+  formAnswerGroup = new FormGroup({
+    verbalTime: new FormControl('', [Validators.required]),
+    phraseAnswed: new FormControl('', [Validators.required]),
+  });
 
   constructor(
     private phraseService: PhraseService,
@@ -31,6 +38,11 @@ export class PhraseComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getPhrases();
+    this.showNextPhraseInPortuguse();
+  }
+
+  private getPhrases() {
     this.phraseService
       .getPhrases()
       .pipe(take(1))
@@ -38,21 +50,29 @@ export class PhraseComponent implements OnInit {
         (phrases: phrases[]) =>
           (this.phrases = phrases.sort(() => Math.random() - 0.5))
       );
+  }
 
-    this.showNextPhraseInPortuguse();
+  optionSelected(option: string) {
+    this.verbalTimeSelected = option;
   }
 
   saveAnswed(phrase: phrases, phraseAnswed: string) {
-    const answer = {
+    this.phrasesAnswed.push({
       ...phrase,
       phraseAnswed: phraseAnswed,
-    };
+      verbalTimeAnswed:
+        !!this.verbalTimeSelected && phraseAnswed !== 'N/A'
+          ? this.verbalTimeSelected
+          : 'N/A',
+    });
 
-    this.phrasesAnswed.push(answer);
+    this.showSnack(phraseAnswed);
+    this.showNextPhraseInPortuguse();
+  }
+
+  private showSnack(phraseAnswed: string) {
     const message = phraseAnswed === '' ? 'Phrase skiped' : 'Phrase saved';
     this._snackBar.open(message);
-
-    this.showNextPhraseInPortuguse();
   }
 
   showNextPhraseInPortuguse() {
@@ -65,7 +85,7 @@ export class PhraseComponent implements OnInit {
       );
       if (phraseNotAnswed) {
         this.phraseShow = phrase;
-        this.formAnswerControl.reset();
+        this.formAnswerGroup.reset();
         break;
       }
     }

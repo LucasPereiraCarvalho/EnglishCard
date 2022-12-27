@@ -1,12 +1,87 @@
-<form class="c-form__Answer">
+<form class="c-form__Answer" [formGroup]="formAnswerGroup">
   <mat-card>
     <mat-card-content>{{ phraseShow.portuguesePhrase }}</mat-card-content>
   </mat-card>
 
+  <div class="c-form__options__verbal__time">
+    <!-- TODO: Separate the verbal times in child components  -->
+    <mat-form-field appearance="fill">
+      <mat-label>Future</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Future"
+        matInput
+        formControlName="verbalTime"
+        [matAutocomplete]="autoFuture"
+      />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #autoFuture="matAutocomplete"
+        (optionSelected)="optionSelected($event.option.value)"
+      >
+        <mat-option
+          *ngFor="let option of optionsVerbalTimesFuture"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Present</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Present"
+        matInput
+        formControlName="verbalTime"
+        [matAutocomplete]="autoPresent"
+      />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #autoPresent="matAutocomplete"
+        (optionSelected)="optionSelected($event.option.value)"
+      >
+        <mat-option
+          *ngFor="let option of optionsVerbalTimesPresent"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Past</mat-label>
+      <input
+        type="text"
+        placeholder="Pick one"
+        aria-label="Past"
+        matInput
+        formControlName="verbalTime"
+        [matAutocomplete]="autoPast"
+      />
+      <mat-autocomplete
+        autoActiveFirstOption
+        #autoPast="matAutocomplete"
+        (optionSelected)="optionSelected($event.option.value)"
+      >
+        <mat-option
+          *ngFor="let option of optionsVerbalTimesPast"
+          [value]="option"
+        >
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
   <mat-form-field>
     <mat-label>Answer</mat-label>
-    <input matInput #answer [formControl]="formAnswerControl" required />
-    <mat-error *ngIf="formAnswerControl.hasError('required')">
+    <input matInput #answer formControlName="phraseAnswed" required />
+    <mat-error *ngIf="formAnswerGroup.hasError('required')">
       Answer is <strong>required</strong>
     </mat-error>
   </mat-form-field>
@@ -17,7 +92,7 @@
       <button
         mat-raised-button
         (click)="saveAnswed(phraseShow, answer.value)"
-        [disabled]="!formAnswerControl.valid"
+        [disabled]="!formAnswerGroup.valid"
       >
         Next Phrase
       </button>
@@ -25,7 +100,7 @@
       <button
         mat-raised-button
         (click)="saveAnswed(phraseShow, 'N/A')"
-        [disabled]="formAnswerControl.valid"
+        [disabled]="formAnswerGroup.valid"
       >
         Skip Phrase
       </button>
