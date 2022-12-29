@@ -47,7 +47,7 @@ export const Phrases = [
   {
     portuguesePhrase: 'A janela está quebrada há três dias',
     englishPhrase: 'The window has been broken for three days',
-    verbalTime: 'PPC',
+    verbalTime: 'Past Perfect Continuous',
   },
   {
     portuguesePhrase: 'Quem mora naquela casa?',
@@ -57,7 +57,7 @@ export const Phrases = [
   {
     portuguesePhrase: 'Chove muito há uma hora',
     englishPhrase: 'It has been raining a lot for an hour',
-    verbalTime: 'PPC',
+    verbalTime: 'Present Perfect Continuous',
   },
   {
     portuguesePhrase: 'O que você está fazendo neste fim de semana?',
@@ -77,13 +77,13 @@ export const Phrases = [
   {
     portuguesePhrase: 'Você os viu ontem?',
     englishPhrase: 'Did you see them yesterday?',
-    verbalTime: 'SP',
+    verbalTime: 'Past Simple',
   },
   {
     portuguesePhrase:
       'Eu não liguei para você ontem porque eu tinha que dormir cedo',
     englishPhrase: "I didn't call you yesterday because I had to sleep early",
-    verbalTime: '',
+    verbalTime: 'Past Perfect (*)',
   },
   {
     portuguesePhrase: 'Era um dia ensolarado',
