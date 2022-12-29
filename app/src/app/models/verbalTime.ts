@@ -1,4 +1,8 @@
-export const VerbalTimesFuture = ['Future sure', 'Future not sure'];
+export const VerbalTimesFuture = [
+  'Future sure',
+  'Future not sure',
+  'Future (Modal verb)',
+];
 
 export const VerbalTimesPresent = [
   'Simple Present',
