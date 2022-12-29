@@ -14,9 +14,10 @@ import { AppComponent } from './app.component';
 import { PhraseComponent } from './phrase/phrase.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaPhrasesAnswedComponent } from './lista-phrases-answed/lista-phrases-answed.component';
+import { ListOfPhraseWrongComponent } from './lista-phrases-answed/list-of-phrase-wrong/list-of-phrase-wrong.component';
 
 @NgModule({
-  declarations: [AppComponent, PhraseComponent, ListaPhrasesAnswedComponent],
+  declarations: [AppComponent, PhraseComponent, ListaPhrasesAnswedComponent, ListOfPhraseWrongComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

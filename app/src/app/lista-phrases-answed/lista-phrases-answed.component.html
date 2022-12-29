@@ -1,77 +1,89 @@
 <div class="container">
   <div class="c-list-phrases-answed__back__phrase">
     <div>{{ score() }}</div>
-    <button mat-raised-button (click)="backPagePhrase()">Back Phrase</button>
+    <div class="options">
+      <button mat-raised-button (click)="backPagePhrase()">Back Phrase</button>
+      <button mat-raised-button (click)="showPhraseOrshowPhraseWrong()">
+        {{ labelBtnShowPhrase }}
+      </button>
+    </div>
   </div>
 
-  <div class="c-list-phrases-answed" *ngFor="let phrase of phrasesAnswed">
-    <mat-card class="c-list-phrases-answed__id">
-      <mat-card-content> {{ phrase.id }} </mat-card-content>
-    </mat-card>
-
-    <div class="c-list-phrases-answed__data">
-      <mat-card class="c-list-phrases-answed__cards">
-        <mat-card-content> {{ phrase.portuguesePhrase }} </mat-card-content>
+  <div *ngIf="showPhrase">
+    <div class="c-list-phrases-answed" *ngFor="let phrase of phrasesAnswed">
+      <mat-card class="c-list-phrases-answed__id">
+        <mat-card-content> {{ phrase.id }} </mat-card-content>
       </mat-card>
 
-      <mat-card class="c-list-phrases-answed__cards">
-        <mat-card-content> {{ phrase.englishPhrase }} </mat-card-content>
-      </mat-card>
+      <div class="c-list-phrases-answed__data">
+        <mat-card class="c-list-phrases-answed__cards">
+          <mat-card-content> {{ phrase.portuguesePhrase }} </mat-card-content>
+        </mat-card>
 
-      <mat-card class="c-list-phrases-answed__cards">
-        <mat-card-content class="c-list-phrases-answed__card__phrase__answed">
-          Res: {{ phrase.phraseAnswed }}
-          <div>
-            <button
-              *ngIf="
-                phrase.phraseCorrect === false ||
-                phrase.phraseCorrect === undefined
-              "
-              mat-raised-button
-              (click)="answerCorrect(phrase.id, true)"
-            >
-              Correct
-            </button>
-            <button
-              *ngIf="phrase.phraseCorrect === true"
-              mat-raised-button
-              color="primary"
-              (click)="answerCorrect(phrase.id, true)"
-            >
-              Correct
-            </button>
-            <button
-              *ngIf="
-                phrase.phraseCorrect === true ||
-                phrase.phraseCorrect === undefined
-              "
-              mat-raised-button
-              (click)="answerCorrect(phrase.id, false)"
-            >
-              Wrong
-            </button>
-            <button
-              *ngIf="phrase.phraseCorrect === false"
-              mat-raised-button
-              color="warn"
-              (click)="answerCorrect(phrase.id, false)"
-            >
-              Wrong
-            </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+        <mat-card class="c-list-phrases-answed__cards">
+          <mat-card-content> {{ phrase.englishPhrase }} </mat-card-content>
+        </mat-card>
 
-      <div class="c-list-phrases-answed__cards--verbal--time">
-        <mat-card class="c-list-phrases-answed__cards cards--verbal--time">
-          <mat-card-content>
-            Res: {{ phrase.verbalTimeAnswed }}
+        <mat-card class="c-list-phrases-answed__cards">
+          <mat-card-content class="c-list-phrases-answed__card__phrase__answed">
+            Res: {{ phrase.phraseAnswed }}
+            <div>
+              <button
+                *ngIf="
+                  phrase.phraseCorrect === false ||
+                  phrase.phraseCorrect === undefined
+                "
+                mat-raised-button
+                (click)="answerCorrect(phrase.id, true)"
+              >
+                Correct
+              </button>
+              <button
+                *ngIf="phrase.phraseCorrect === true"
+                mat-raised-button
+                color="primary"
+                (click)="answerCorrect(phrase.id, true)"
+              >
+                Correct
+              </button>
+              <button
+                *ngIf="
+                  phrase.phraseCorrect === true ||
+                  phrase.phraseCorrect === undefined
+                "
+                mat-raised-button
+                (click)="answerCorrect(phrase.id, false)"
+              >
+                Wrong
+              </button>
+              <button
+                *ngIf="phrase.phraseCorrect === false"
+                mat-raised-button
+                color="warn"
+                (click)="answerCorrect(phrase.id, false)"
+              >
+                Wrong
+              </button>
+            </div>
           </mat-card-content>
         </mat-card>
-        <mat-card class="c-list-phrases-answed__cards cards--verbal--time">
-          <mat-card-content> {{ phrase.verbalTime }} </mat-card-content>
-        </mat-card>
+
+        <div class="c-list-phrases-answed__cards--verbal--time">
+          <mat-card class="c-list-phrases-answed__cards cards--verbal--time">
+            <mat-card-content>
+              Res: {{ phrase.verbalTimeAnswed }}
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="c-list-phrases-answed__cards cards--verbal--time">
+            <mat-card-content> {{ phrase.verbalTime }} </mat-card-content>
+          </mat-card>
+        </div>
       </div>
     </div>
   </div>
+
+  <app-list-of-phrase-wrong
+    *ngIf="!showPhrase && phrasesAnswed"
+    [phrasesAnswed]="phrasesAnswed"
+  ></app-list-of-phrase-wrong>
 </div>

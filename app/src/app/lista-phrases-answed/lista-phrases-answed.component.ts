@@ -9,6 +9,8 @@ import { phrases } from '../models/phrase.model';
 })
 export class ListaPhrasesAnswedComponent {
   phrasesAnswed: phrases[] | any = [];
+  showPhrase = true;
+  labelBtnShowPhrase = 'Show Phrase Wrong';
 
   constructor(private router: Router) {
     this.phrasesAnswed = this.router.getCurrentNavigation()?.extras.state;
@@ -37,5 +39,12 @@ export class ListaPhrasesAnswedComponent {
     );
 
     return `${phrasesCorrect.length} / ${this.phrasesAnswed.length}`;
+  }
+
+  showPhraseOrshowPhraseWrong() {
+    this.showPhrase = !this.showPhrase;
+    this.labelBtnShowPhrase = this.showPhrase
+      ? 'Show Phrase Wrong'
+      : 'Show Phrase';
   }
 }
