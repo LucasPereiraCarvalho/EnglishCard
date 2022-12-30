@@ -7,42 +7,42 @@ export const Phrases = [
   {
     portuguesePhrase: 'Não durmo há três dias',
     englishPhrase: "I haven't slept for three days",
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Você estava com eles quando um acidente aconteceu?',
     englishPhrase: 'Were you with them when an accident happened?',
-    verbalTime: 'PC',
+    verbalTime: 'Past Continuous',
   },
   {
     portuguesePhrase: 'Ninguém conhece ele',
     englishPhrase: 'No One knows him',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Acabei de chegar em casa',
     englishPhrase: 'I have just arrived at home',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Quantos anos ela tinha quando começou a estudar?',
     englishPhrase: 'How old was she when she started school?',
-    verbalTime: 'PS',
+    verbalTime: 'Past Simple',
   },
   {
     portuguesePhrase: 'Por que você está triste?',
     englishPhrase: 'Why are you sad?',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Conheço essa mulher, mas esqueci-me do seu nome',
     englishPhrase: 'I know that woman, but I have forgotten her name',
-    verbalTime: 'SP - PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Você já jantou?',
     englishPhrase: 'Have you eaten dinner yet?',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'A janela está quebrada há três dias',
@@ -52,7 +52,7 @@ export const Phrases = [
   {
     portuguesePhrase: 'Quem mora naquela casa?',
     englishPhrase: 'Who lives in that house?',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Chove muito há uma hora',
@@ -67,12 +67,12 @@ export const Phrases = [
   {
     portuguesePhrase: 'Eu provavelmente vou viajar amanhã às 14h',
     englishPhrase: 'I might travel tomorrow at 2 p.m',
-    verbalTime: 'Future',
+    verbalTime: 'Future (Modal verb)',
   },
   {
     portuguesePhrase: 'O que você faz?',
     englishPhrase: 'What do you do?',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Você os viu ontem?',
@@ -83,21 +83,21 @@ export const Phrases = [
     portuguesePhrase:
       'Eu não liguei para você ontem porque eu tinha que dormir cedo',
     englishPhrase: "I didn't call you yesterday because I had to sleep early",
-    verbalTime: 'Past Perfect (*)',
+    verbalTime: 'Past Perfect',
   },
   {
     portuguesePhrase: 'Era um dia ensolarado',
     englishPhrase: 'It was a sunny day',
-    verbalTime: 'PS',
+    verbalTime: 'Past Simple',
   },
   {
-    portuguesePhrase: 'De onde é?',
+    portuguesePhrase: 'De onde você é?',
     englishPhrase: 'Where are you from?',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Eu tentei falar com ela todos os dias',
     englishPhrase: 'I tried to speak to her every day',
-    verbalTime: 'PS',
+    verbalTime: 'Past Simple',
   },
 ];
