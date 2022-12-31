@@ -1,23 +1,34 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PhraseComponent } from './phrase/phrase.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListOfPhraseWrongComponent } from './list-of-phrase-wrong/list-of-phrase-wrong.component';
+import { ListPhraseComponent } from './list-phrase/list-phrase.component';
 import { ListaPhrasesAnswedComponent } from './lista-phrases-answed/lista-phrases-answed.component';
-import { ListOfPhraseWrongComponent } from './lista-phrases-answed/list-of-phrase-wrong/list-of-phrase-wrong.component';
+import { PhraseComponent } from './phrase/phrase.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
-  declarations: [AppComponent, PhraseComponent, ListaPhrasesAnswedComponent, ListOfPhraseWrongComponent],
+  declarations: [
+    AppComponent,
+    PhraseComponent,
+    ListaPhrasesAnswedComponent,
+    ListOfPhraseWrongComponent,
+    ListPhraseComponent,
+    QuestionsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,7 +42,9 @@ import { ListOfPhraseWrongComponent } from './lista-phrases-answed/list-of-phras
     MatInputModule,
     MatSnackBarModule,
     MatIconModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatGridListModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

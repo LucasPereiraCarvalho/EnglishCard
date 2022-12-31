@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { phrases } from 'src/app/models/phrase.model';
+import { Phrases } from 'src/app/models/phrase.model';
 
 @Component({
   selector: 'app-list-of-phrase-wrong',
@@ -7,7 +7,7 @@ import { phrases } from 'src/app/models/phrase.model';
   styleUrls: ['./list-of-phrase-wrong.component.scss'],
 })
 export class ListOfPhraseWrongComponent {
-  @Input() phrasesAnswed: phrases[];
+  @Input() phrasesAnswed: Phrases[];
 
   phrasesWrong() {
     return this.phrasesAnswed.filter(

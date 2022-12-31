@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { phrases } from '../models/phrase.model';
+import { Phrases } from '../models/phrase.model';
 import {
   VerbalTimesFuture,
   VerbalTimesPast,
@@ -17,9 +17,9 @@ import { PhraseService } from '../services/phrase.service';
   styleUrls: ['./phrase.component.scss'],
 })
 export class PhraseComponent implements OnInit {
-  phrases: phrases[] = [];
-  phrasesAnswed: phrases[] = [];
-  phraseShow: phrases;
+  phrases: Phrases[] = [];
+  phrasesAnswed: Phrases[] = [];
+  phraseShow: Phrases;
   verbalTimeSelected: string;
 
   optionsVerbalTimesFuture: string[] = VerbalTimesFuture;
@@ -42,12 +42,17 @@ export class PhraseComponent implements OnInit {
     this.showNextPhraseInPortuguse();
   }
 
+  getPhrasesAnsewered(event: Phrases[]) {
+    console.log('componente barra', event);
+    // this.phrasesAnswed.push(...event);
+  }
+
   private getPhrases() {
     this.phraseService
       .getPhrases()
       .pipe(take(1))
       .subscribe(
-        (phrases: phrases[]) =>
+        (phrases: Phrases[]) =>
           (this.phrases = phrases.sort(() => Math.random() - 0.5))
       );
   }
@@ -56,7 +61,7 @@ export class PhraseComponent implements OnInit {
     this.verbalTimeSelected = option;
   }
 
-  saveAnswed(phrase: phrases, phraseAnswed: string) {
+  saveAnswed(phrase: Phrases, phraseAnswed: string) {
     this.phrasesAnswed.push({
       ...phrase,
       phraseAnswed: phraseAnswed,

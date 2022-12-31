@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { phrases } from '../models/phrase.model';
+import { Phrases } from '../models/phrase.model';
 
 @Component({
   selector: 'app-lista-phrases-answed',
@@ -8,7 +8,7 @@ import { phrases } from '../models/phrase.model';
   styleUrls: ['./lista-phrases-answed.component.scss'],
 })
 export class ListaPhrasesAnswedComponent {
-  phrasesAnswed: phrases[] | any = [];
+  phrasesAnswed: Phrases[] | any = [];
   showPhrase = true;
   labelBtnShowPhrase = 'Show Phrase Wrong';
 
@@ -21,7 +21,7 @@ export class ListaPhrasesAnswedComponent {
   }
 
   answerCorrect(id: number, correct: boolean) {
-    this.phrasesAnswed = this.phrasesAnswed.map((phrase: phrases) => {
+    this.phrasesAnswed = this.phrasesAnswed.map((phrase: Phrases) => {
       return phrase.id === id
         ? {
             ...phrase,
@@ -35,7 +35,7 @@ export class ListaPhrasesAnswedComponent {
     if (!this.phrasesAnswed) return '0 / 0';
 
     const phrasesCorrect = this.phrasesAnswed.filter(
-      (p: phrases) => p.phraseCorrect === true
+      (p: Phrases) => p.phraseCorrect === true
     );
 
     return `${phrasesCorrect.length} / ${this.phrasesAnswed.length}`;

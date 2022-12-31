@@ -1,0 +1,34 @@
+<div class="c-list__card" *ngFor="let phrase of phrasesAnswed">
+  <div class="c-list__row">
+    <mat-card class="c-list__question color-correct-answer">
+      <mat-card-content>{{ phrase.portuguesePhrase }}</mat-card-content>
+    </mat-card>
+    <mat-card class="c-list__id color-id">
+      <mat-card-subtitle>{{ phrase.id }}</mat-card-subtitle>
+    </mat-card>
+  </div>
+
+  <div class="c-list__row">
+    <mat-card class="c-list__answer color-correct-answer">
+      <mat-card-content>{{ phrase.englishPhrase }}</mat-card-content>
+    </mat-card>
+    <mat-card class="c-list__verbal__time color-correct-answer">
+      <mat-card-content>{{ phrase.verbalTime }}</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="c-list__row">
+    <mat-card class="c-list__answer">
+      <mat-card-content>{{ phrase.phraseAnswed }}</mat-card-content>
+    </mat-card>
+    <mat-card class="c-list__verbal__time">
+      <mat-card-content>{{ phrase.verbalTimeAnswed }}</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="c-list__buttons">
+    <button mat-stroked-button color="primary">Primary</button>
+    <button mat-stroked-button color="warn">Warn</button>
+  </div>
+  <hr />
+</div>
