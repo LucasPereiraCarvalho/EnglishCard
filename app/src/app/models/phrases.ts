@@ -47,7 +47,7 @@ export const Phrases = [
   {
     portuguesePhrase: 'A janela está quebrada há três dias',
     englishPhrase: 'The window has been broken for three days',
-    verbalTime: 'Past Perfect Continuous',
+    verbalTime: 'Present Perfect Continuous',
   },
   {
     portuguesePhrase: 'Quem mora naquela casa?',
@@ -62,7 +62,7 @@ export const Phrases = [
   {
     portuguesePhrase: 'O que você está fazendo neste fim de semana?',
     englishPhrase: 'What are you doing in this weekend?',
-    verbalTime: 'Future',
+    verbalTime: 'Future sure',
   },
   {
     portuguesePhrase: 'Eu provavelmente vou viajar amanhã às 14h',
