@@ -27,8 +27,21 @@
   </div>
 
   <div class="c-list__buttons">
-    <button mat-stroked-button color="primary">Primary</button>
-    <button mat-stroked-button color="warn">Warn</button>
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="answerCorrect(phrase.id, true)"
+    >
+      Correct
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      (click)="answerCorrect(phrase.id, false)"
+    >
+      Wrong
+    </button>
   </div>
   <hr />
 </div>
+<div *ngIf="phrasesAnswed?.length === 0"> No Phrase</div>

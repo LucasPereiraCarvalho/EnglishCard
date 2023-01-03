@@ -1,3 +1,7 @@
+.c-list__card {
+  margin-top: 20px;
+}
+
 .c-list__row {
   display: flex;
   justify-content: space-between;
@@ -43,4 +47,5 @@
 
 hr {
   margin: 20px 0px;
+  opacity: 50%;
 }

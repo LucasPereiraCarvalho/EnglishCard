@@ -14,18 +14,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListOfPhraseWrongComponent } from './list-of-phrase-wrong/list-of-phrase-wrong.component';
-import { ListPhraseComponent } from './list-phrase/list-phrase.component';
-import { ListaPhrasesAnswedComponent } from './lista-phrases-answed/lista-phrases-answed.component';
-import { PhraseComponent } from './phrase/phrase.component';
-import { QuestionsComponent } from './questions/questions.component';
+import { ListPhraseComponent } from './component/list-phrase/list-phrase.component';
+import { QuestionsComponent } from './component/questions/questions.component';
+import { TabsComponent } from './component/tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhraseComponent,
-    ListaPhrasesAnswedComponent,
-    ListOfPhraseWrongComponent,
+    TabsComponent,
     ListPhraseComponent,
     QuestionsComponent,
   ],

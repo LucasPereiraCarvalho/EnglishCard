@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { provideProtractorTestingSupport } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { Phrases } from '../models/phrase.model';
+import { Phrases } from '../../models/phrase.model';
 import {
   VerbalTimesFuture,
   VerbalTimesPast,
   VerbalTimesPresent,
-} from '../models/verbalTime';
-import { PhraseService } from '../services/phrase.service';
+} from '../../models/verbalTime';
+import { PhraseService } from '../../services/phrase.service';
 
 @Component({
-  selector: 'app-phrase',
-  templateUrl: './phrase.component.html',
-  styleUrls: ['./phrase.component.scss'],
+  selector: 'app-tabs',
+  templateUrl: './tabs.component.html',
+  styleUrls: ['./tabs.component.scss'],
 })
-export class PhraseComponent implements OnInit {
+export class TabsComponent implements OnInit {
   phrases: Phrases[] = [];
   phrasesAnswed: Phrases[] = [];
+  phrasesAnswedWrong: Phrases[] = [];
   phraseShow: Phrases;
   verbalTimeSelected: string;
 
@@ -35,7 +37,9 @@ export class PhraseComponent implements OnInit {
     private phraseService: PhraseService,
     private router: Router,
     private _snackBar: MatSnackBar
-  ) {}
+  ) {
+    console.log(this.phrasesAnswed);
+  }
 
   ngOnInit(): void {
     this.getPhrases();
@@ -43,8 +47,8 @@ export class PhraseComponent implements OnInit {
   }
 
   getPhrasesAnsewered(event: Phrases[]) {
-    console.log('componente barra', event);
-    // this.phrasesAnswed.push(...event);
+    this.phrasesAnswed = [];
+    this.phrasesAnswed.push(...event.filter((p) => p.phraseAnswed));
   }
 
   private getPhrases() {
@@ -100,5 +104,12 @@ export class PhraseComponent implements OnInit {
     this.router.navigate(['/list-phrases-answed'], {
       state: this.phrasesAnswed,
     });
+  }
+
+  phrasesAnswedUpdated(event: Phrases[]) {
+    // this.phrasesAnswedWrong = {
+    //   ...this.phrasesAnswedWrong,
+    // };
+    this.phrasesAnswedWrong = event.filter((p) => p.phraseCorrect === false);
   }
 }

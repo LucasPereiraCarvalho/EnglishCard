@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
-import { ListPhraseComponent } from './list-phrase/list-phrase.component';
+import { ListPhraseComponent } from './component/list-phrase/list-phrase.component';
 
 export interface Tab {
   label: string;

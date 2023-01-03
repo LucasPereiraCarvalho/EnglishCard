@@ -1,15 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { take } from 'rxjs';
-import { Phrases } from '../models/phrase.model';
+import { Phrases } from '../../models/phrase.model';
 import {
   VerbalTimesFuture,
   VerbalTimesPast,
   VerbalTimesPresent,
-} from '../models/verbalTime';
-import { PhraseService } from '../services/phrase.service';
+} from '../../models/verbalTime';
+import { PhraseService } from '../../services/phrase.service';
 
 @Component({
   selector: 'app-questions',
@@ -62,18 +62,17 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  optionSelected(option: string) {
+  optionVerbalTimeSelected(option: string) {
     this.verbalTimeSelected = option;
   }
 
   saveAnswed(phraseShow: Phrases, phraseAnswed: string) {
     this.updatePhrases(phraseShow, phraseAnswed);
     this.phrasesAnsewered.emit(this.phrases);
-    this.showSnack(phraseAnswed);
     this.showNextQuestion();
   }
 
-  updatePhrases(phraseShow: Phrases, phraseAnswed: string) {
+  private updatePhrases(phraseShow: Phrases, phraseAnswed: string) {
     this.phrases = this.phrases.map((phrase: Phrases) => {
       return phrase.id === phraseShow.id
         ? {
@@ -86,10 +85,19 @@ export class QuestionsComponent implements OnInit {
           }
         : { ...phrase };
     });
+
+    this.showSnack(phraseAnswed);
   }
 
   showSnack(phraseAnswed: string) {
     const message = phraseAnswed === '' ? 'Phrase skiped' : 'Phrase saved';
-    this._snackBar.open(message);
+    this._snackBar.open(message, 'Undo', {
+      duration: 3000,
+    });
+  }
+
+  score() {
+    const score = this.phrases.filter((p) => p.phraseAnswed).length.toString();
+    return score + ' / ' + this.phrases.length;
   }
 }
