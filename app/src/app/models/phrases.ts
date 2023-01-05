@@ -21,7 +21,7 @@ export const Phrases = [
   },
   {
     portuguesePhrase: 'Acabei de chegar em casa',
-    englishPhrase: 'I have just arrived at home',
+    englishPhrase: 'I have just arrived home',
     verbalTime: 'Present Perfect',
   },
   {
@@ -61,7 +61,7 @@ export const Phrases = [
   },
   {
     portuguesePhrase: 'O que você está fazendo neste fim de semana?',
-    englishPhrase: 'What are you doing in this weekend?',
+    englishPhrase: 'What are you doing this weekend?',
     verbalTime: 'Future sure',
   },
   {
@@ -99,5 +99,86 @@ export const Phrases = [
     portuguesePhrase: 'Eu tentei falar com ela todos os dias',
     englishPhrase: 'I tried to speak to her every day',
     verbalTime: 'Past Simple',
+  },
+  {
+    portuguesePhrase: 'Ele está dormindo',
+    englishPhrase: 'He is sleeping',
+    verbalTime: 'PC',
+  },
+  {
+    portuguesePhrase: 'Onde você esteve desde ontem?',
+    englishPhrase: 'Where have you been since yesterday',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'Ela já chegou em casa',
+    englishPhrase: 'She has already arrived home',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'Ele vai viajar amanhã as 14:00',
+    englishPhrase: 'He is going to travel tomorrow 2pm',
+    verbalTime: 'Future sure',
+  },
+  {
+    portuguesePhrase: 'Ele não faz nada quando estou aqui',
+    englishPhrase: "He doesn't do anything when I am here",
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Ninguém gosta deles',
+    englishPhrase: 'No one likes them',
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Há quanto tempo você trabalha aqui?',
+    englishPhrase: 'How long have you worked here?',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'Ninguém mora naquela casa há um ano.',
+    englishPhrase: 'No one has lived in that house for a year',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'O que ela faz?',
+    englishPhrase: 'What does she do?',
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Você gostaria de algo para comer?',
+    englishPhrase: 'Would you like something to eat?',
+    verbalTime: 'Future not sure',
+  },
+  {
+    portuguesePhrase: 'Quem quebrou a janela ontem à noite?',
+    englishPhrase: 'Who broke the window last night?',
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Você já comeu hoje?',
+    englishPhrase: 'Have you eaten today yet?',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'Meu carro está sendo consertado (voz passiva)',
+    englishPhrase: 'My car is being fixed (Passive voice)',
+    verbalTime: 'PC',
+  },
+  {
+    portuguesePhrase:
+      'Quem estava dirigindo o carro quando o acidente aconteceu?',
+    englishPhrase: 'Who was driving the car when the accident happened?',
+    verbalTime: 'PC',
+  },
+  {
+    portuguesePhrase: 'Está nublado ... pode chover ainda hoje',
+    englishPhrase: "It's cloudy….it might rain later today",
+    verbalTime: 'Future (Modal verb)',
+  },
+  {
+    portuguesePhrase: 'Onde você estava ontem?',
+    englishPhrase: 'Where were you yesterday?',
+    verbalTime: 'PS',
   },
 ];
