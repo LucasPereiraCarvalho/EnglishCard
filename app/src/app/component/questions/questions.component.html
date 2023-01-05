@@ -18,7 +18,7 @@
       <mat-autocomplete
         autoActiveFirstOption
         #autoFuture="matAutocomplete"
-        (optionSelected)="optionSelected($event.option.value)"
+        (optionSelected)="optionVerbalTimeSelected($event.option.value)"
       >
         <mat-option
           *ngFor="let option of optionsVerbalTimesFuture"
@@ -42,7 +42,7 @@
       <mat-autocomplete
         autoActiveFirstOption
         #autoPresent="matAutocomplete"
-        (optionSelected)="optionSelected($event.option.value)"
+        (optionSelected)="optionVerbalTimeSelected($event.option.value)"
       >
         <mat-option
           *ngFor="let option of optionsVerbalTimesPresent"
@@ -66,7 +66,7 @@
       <mat-autocomplete
         autoActiveFirstOption
         #autoPast="matAutocomplete"
-        (optionSelected)="optionSelected($event.option.value)"
+        (optionSelected)="optionVerbalTimeSelected($event.option.value)"
       >
         <mat-option
           *ngFor="let option of optionsVerbalTimesPast"
@@ -87,7 +87,7 @@
   </mat-form-field>
 
   <div class="c-form__Buttons">
-    <label>{{ phrasesAnswed.length }} / {{ phrases.length }}</label>
+    <label>{{ score() }}</label>
     <div class="c-form__Buttons">
       <button
         mat-raised-button
@@ -103,10 +103,6 @@
         [disabled]="formAnswerGroup.valid"
       >
         Skip Phrase
-      </button>
-
-      <button mat-raised-button (click)="navigateToListPhrasesAnswed()">
-        List Phrases Answed
       </button>
     </div>
   </div>

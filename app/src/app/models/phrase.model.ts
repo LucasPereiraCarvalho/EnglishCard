@@ -1,4 +1,4 @@
-export interface phrases {
+export interface Phrases {
   id: number;
   portuguesePhrase: string;
   englishPhrase: string;

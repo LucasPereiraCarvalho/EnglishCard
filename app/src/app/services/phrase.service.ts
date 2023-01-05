@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
-import { phrases } from '../models/phrase.model';
-import { Phrases } from '../models/phrases';
+import { Phrases } from '../models/phrase.model';
+import { Phrases as PhrasesMock } from '../models/phrases';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PhraseService {
-  getPhrases(): Observable<phrases[]> {
-    return of(Phrases).pipe(
+  getPhrases(): Observable<Phrases[]> {
+    return of(PhrasesMock).pipe(
       map((response: any) =>
-        response.map((phrase: phrases, index: number) => {
+        response.map((phrase: Phrases, index: number) => {
           return {
             ...phrase,
             id: index + 1,

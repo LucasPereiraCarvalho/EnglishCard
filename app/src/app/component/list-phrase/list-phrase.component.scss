@@ -1,0 +1,51 @@
+.c-list__card {
+  margin-top: 20px;
+}
+
+.c-list__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.color-correct-answer {
+  background-color: rgb(240, 240, 240);
+}
+
+.color-id {
+  background-color: rgb(197, 197, 197);
+}
+
+.c-list__question {
+  width: 90%;
+}
+
+.c-list__id {
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-list__answer {
+  width: 70%;
+}
+
+.c-list__verbal__time {
+  width: 30%;
+}
+
+.c-list__buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+
+  button {
+    min-width: 100px;
+  }
+}
+
+hr {
+  margin: 20px 0px;
+  opacity: 50%;
+}

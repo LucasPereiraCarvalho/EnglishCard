@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+import { ListPhraseComponent } from './component/list-phrase/list-phrase.component';
+
+export interface Tab {
+  label: string;
+  content: any;
+}
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'app';
+  title = 'English Card';
 }

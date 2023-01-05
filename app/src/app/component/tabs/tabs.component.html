@@ -1,0 +1,20 @@
+<mat-tab-group>
+  <mat-tab label="Questions">
+    <app-questions
+      (phrasesAnsewered)="getPhrasesAnsewered($event)"
+    ></app-questions>
+  </mat-tab>
+  <mat-tab  label="List phrases answered">
+    <app-list-phrase 
+      *ngIf="phrasesAnswed"
+      [phrasesAnswed]="phrasesAnswed"
+      (phrasesAnswedUpdated)="phrasesAnswedUpdated($event)"
+    ></app-list-phrase>
+  </mat-tab>
+  <mat-tab label="List phrases wrong">
+    <app-list-phrase
+      *ngIf="phrasesAnswed"
+      [phrasesAnswed]="phrasesAnswedWrong"
+    ></app-list-phrase>
+  </mat-tab>
+</mat-tab-group>
