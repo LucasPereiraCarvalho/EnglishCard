@@ -27,7 +27,17 @@
   </div>
 
   <div class="c-list__buttons">
+    //TODO: Criar logica para mudar o btn de acordo com a resposta
     <button
+      *ngIf="phrase.phraseCorrect === true"
+      mat-raised-button
+      color="primary"
+      (click)="answerCorrect(phrase.id, true)"
+    >
+      Correct
+    </button>
+    <button
+      *ngIf="phrase.phraseCorrect === undefined  || phrase.phraseCorrect === false"
       mat-stroked-button
       color="primary"
       (click)="answerCorrect(phrase.id, true)"
@@ -35,6 +45,15 @@
       Correct
     </button>
     <button
+      *ngIf="phrase.phraseCorrect === false"
+      mat-raised-button
+      color="warn"
+      (click)="answerCorrect(phrase.id, false)"
+    >
+      Wrong
+    </button>
+    <button
+      *ngIf="phrase.phraseCorrect === undefined || phrase.phraseCorrect === true"
       mat-stroked-button
       color="warn"
       (click)="answerCorrect(phrase.id, false)"
@@ -44,4 +63,4 @@
   </div>
   <hr />
 </div>
-<div *ngIf="phrasesAnswed?.length === 0"> No Phrase</div>
+<div *ngIf="phrasesAnswed?.length === 0">No Phrase</div>
