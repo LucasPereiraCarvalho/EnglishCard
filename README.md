@@ -16,7 +16,7 @@
 - [x] Separar componentes
 - [ ] Criar score
 - [ ] Utilizar Redux para melhorar o gerenciamento do estado
-- [-] Refatorar componentes (aos poucos)
+- [ ] Refatorar componentes (aos poucos)
 - [ ] Implementar temas
 - [ ] Implementar paginator
 - [ ] Implementar progress bar
