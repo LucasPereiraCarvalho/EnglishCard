@@ -46,7 +46,7 @@ export const Phrases = [
   },
   {
     portuguesePhrase: 'A janela está quebrada há três dias',
-    englishPhrase: 'The window has been broken for three days',
+    englishPhrase: 'The window has been broking for three days',
     verbalTime: 'Present Perfect Continuous',
   },
   {
@@ -179,6 +179,57 @@ export const Phrases = [
   {
     portuguesePhrase: 'Onde você estava ontem?',
     englishPhrase: 'Where were you yesterday?',
+    verbalTime: 'PS',
+  },
+  /////////////////////
+  {
+    portuguesePhrase: 'Ele não é seu irmão, não é?',
+    englishPhrase: "He isn't your brother, is he?",
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Ela não mora mais aqui',
+    englishPhrase: "She doesn't live here anymore",
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Por que ela está indo embora?',
+    englishPhrase: 'Why is she going away?',
+    verbalTime: 'PC',
+  },
+  {
+    portuguesePhrase: 'Por que você deixou a porta aberta ontem?',
+    englishPhrase: 'Why did you leave the door open yesterday?',
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'Ele estava voltando para casa quando eu o vi.',
+    englishPhrase: 'He was coming home when I saw him',
+    verbalTime: 'PC',
+  },
+  {
+    portuguesePhrase: 'A: Eu não comi nada hoje. B: É mesmo?',
+    englishPhrase: "A: I haven't eaten anything today. B: Haven't you?",
+    verbalTime: '',
+  },
+  {
+    portuguesePhrase: 'Eu conheço essa mulher, mas esqueci o nome dela',
+    englishPhrase: "I know that woman, but I've forgotten her name",
+    verbalTime: 'SP - PP',
+  },
+  {
+    portuguesePhrase: 'Fiquei desempregado durante três meses no ano passado',
+    englishPhrase: 'I was unemployed for three months last year',
+    verbalTime: 'SP',
+  },
+  {
+    portuguesePhrase: 'How long have you been married?',
+    englishPhrase: 'How long have you been married?',
+    verbalTime: 'PP',
+  },
+  {
+    portuguesePhrase: 'Quem lhe deu esses sapatos?',
+    englishPhrase: 'Who gave you those shoes?',
     verbalTime: 'PS',
   },
 ];
