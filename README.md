@@ -1,5 +1,5 @@
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  🚀 Em construção...  🚧
 </h4>
 
 <h1 align="center">English Card</h1>
@@ -15,6 +15,7 @@
 
 - [x] Separar componentes
 - [ ] Criar score
+- [ ] Criar timer para cada resposta
 - [ ] Utilizar Redux para melhorar o gerenciamento do estado
 - [ ] Refatorar componentes (aos poucos)
 - [ ] Implementar temas
