@@ -108,12 +108,12 @@ export const Phrases = [
   {
     portuguesePhrase: 'Onde você esteve desde ontem?',
     englishPhrase: 'Where have you been since yesterday',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Ela já chegou em casa',
     englishPhrase: 'She has already arrived home',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Ele vai viajar amanhã as 14:00',
@@ -123,27 +123,27 @@ export const Phrases = [
   {
     portuguesePhrase: 'Ele não faz nada quando estou aqui',
     englishPhrase: "He doesn't do anything when I am here",
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Ninguém gosta deles',
     englishPhrase: 'No one likes them',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Há quanto tempo você trabalha aqui?',
     englishPhrase: 'How long have you worked here?',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Ninguém mora naquela casa há um ano.',
     englishPhrase: 'No one has lived in that house for a year',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'O que ela faz?',
     englishPhrase: 'What does she do?',
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Você gostaria de algo para comer?',
@@ -153,12 +153,12 @@ export const Phrases = [
   {
     portuguesePhrase: 'Quem quebrou a janela ontem à noite?',
     englishPhrase: 'Who broke the window last night?',
-    verbalTime: 'SP',
+    verbalTime: 'Past Simple',
   },
   {
     portuguesePhrase: 'Você já comeu hoje?',
     englishPhrase: 'Have you eaten today yet?',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Meu carro está sendo consertado (voz passiva)',
@@ -169,7 +169,7 @@ export const Phrases = [
     portuguesePhrase:
       'Quem estava dirigindo o carro quando o acidente aconteceu?',
     englishPhrase: 'Who was driving the car when the accident happened?',
-    verbalTime: 'PC',
+    verbalTime: 'Past Continuous',
   },
   {
     portuguesePhrase: 'Está nublado ... pode chover ainda hoje',
@@ -179,13 +179,13 @@ export const Phrases = [
   {
     portuguesePhrase: 'Onde você estava ontem?',
     englishPhrase: 'Where were you yesterday?',
-    verbalTime: 'PS',
+    verbalTime: 'Past Simple',
   },
   /////////////////////
   {
     portuguesePhrase: 'Ele não é seu irmão, não é?',
     englishPhrase: "He isn't your brother, is he?",
-    verbalTime: 'SP',
+    verbalTime: 'Simple Present',
   },
   {
     portuguesePhrase: 'Ela não mora mais aqui',
@@ -200,17 +200,17 @@ export const Phrases = [
   {
     portuguesePhrase: 'Por que você deixou a porta aberta ontem?',
     englishPhrase: 'Why did you leave the door open yesterday?',
-    verbalTime: 'SP',
+    verbalTime: 'Past Simple',
   },
   {
     portuguesePhrase: 'Ele estava voltando para casa quando eu o vi.',
     englishPhrase: 'He was coming home when I saw him',
-    verbalTime: 'PC',
+    verbalTime: 'Past Continuous',
   },
   {
     portuguesePhrase: 'A: Eu não comi nada hoje. B: É mesmo?',
     englishPhrase: "A: I haven't eaten anything today. B: Haven't you?",
-    verbalTime: '',
+    verbalTime: 'Present Perfect',
   },
   {
     portuguesePhrase: 'Eu conheço essa mulher, mas esqueci o nome dela',
@@ -220,16 +220,16 @@ export const Phrases = [
   {
     portuguesePhrase: 'Fiquei desempregado durante três meses no ano passado',
     englishPhrase: 'I was unemployed for three months last year',
-    verbalTime: 'SP',
+    verbalTime: 'Past Simple',
   },
   {
-    portuguesePhrase: 'How long have you been married?',
+    portuguesePhrase: 'Há quanto tempo você é casado?',
     englishPhrase: 'How long have you been married?',
-    verbalTime: 'PP',
+    verbalTime: 'Present Perfect Continuous',
   },
   {
     portuguesePhrase: 'Quem lhe deu esses sapatos?',
     englishPhrase: 'Who gave you those shoes?',
-    verbalTime: 'PS',
+    verbalTime: 'Past Simple',
   },
 ];
