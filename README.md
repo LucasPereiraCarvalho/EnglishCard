@@ -1,5 +1,5 @@
 <h4 align="center"> 
-	🚧  React Select 🚀 Em construção...  🚧
+	🚧  🚀 Em construção...  🚧
 </h4>
 
 <h1 align="center">English Card</h1>
@@ -14,6 +14,7 @@
 ### Features / Correções
 
 - [x] Separar componentes
+- [ ] Subir aplicativo no servidor do gitHub
 - [ ] Criar score
 - [ ] Criar timer para cada resposta
 - [ ] Utilizar Redux para melhorar o gerenciamento do estado
@@ -21,3 +22,4 @@
 - [ ] Implementar temas
 - [ ] Implementar paginator
 - [ ] Implementar progress bar
+- [ ] Avaliar a possibilidade de implementar uma IA para ter as frases 
